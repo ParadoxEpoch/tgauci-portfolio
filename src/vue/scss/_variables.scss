@@ -1,0 +1,15 @@
+$color-primary: #ffdb70;
+$body-background: #121212;
+$card-background: #1e1e1f;
+
+@mixin mobile {
+    @media screen and (max-width: 911px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+	@media screen and (min-width: 912px) {
+		@content;
+	}
+}
