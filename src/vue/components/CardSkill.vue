@@ -122,10 +122,17 @@ export default {
 	font-weight: 300;
 	line-height: 1.6;
 	display: -webkit-box;
-	line-clamp: 4;
-	-webkit-line-clamp: 4;
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+
+	@include mobile {
+		/* line-clamp: 4;
+		-webkit-line-clamp: 4; */
+		line-clamp: 3;
+		-webkit-line-clamp: 3;
+	}
 }
 
 .content-card {
