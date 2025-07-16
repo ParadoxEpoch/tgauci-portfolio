@@ -17,13 +17,19 @@
 <script>
 export default {
 	methods: {
-        scrollLeft(refName) {
-            this.$refs.scroller.scrollBy({ left: -200, behavior: 'smooth' })
-        },
-        scrollRight(refName) {
-            this.$refs.scroller.scrollBy({ left: 200, behavior: 'smooth' })
-        },
-    }
+		scrollLeft(refName) {
+			const scroller = this.$refs.scroller;
+			const scrollAmount = scroller.children[0].offsetWidth * 0.9;
+			const newPosition = Math.max(0, scroller.scrollLeft - scrollAmount);
+			scroller.scrollTo({ left: newPosition, behavior: 'smooth' });
+		},
+		scrollRight(refName) {
+			const scroller = this.$refs.scroller;
+			const scrollAmount = scroller.children[0].offsetWidth * 0.9;
+			const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+			const newPosition = Math.min(maxScroll, scroller.scrollLeft + scrollAmount);
+			scroller.scrollTo({ left: newPosition, behavior: 'smooth' });
+		},
 }
 </script>
 
@@ -33,11 +39,11 @@ export default {
 }
 
 .controls {
-    position: absolute;
+	position: absolute;
 	bottom: -10px;
-    right: 0;
+	right: 0;
 	display: flex;
-    gap: 10px;
+	gap: 10px;
 
 	a {
 		color: $color-primary;
