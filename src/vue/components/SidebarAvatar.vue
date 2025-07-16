@@ -169,7 +169,6 @@ export default {
 		z-index: 1;
 		backdrop-filter: blur(8px);
 		cursor: pointer;
-		filter: drop-shadow(2px 4px 6px black);
 		-webkit-user-select: none;
 		user-select: none;
 		opacity: 0;
@@ -181,6 +180,10 @@ export default {
 
 		.svg-icon {
 			font-size: 2rem;
+		}
+
+		> * {
+			filter: drop-shadow(2px 4px 6px black);
 		}
 	}
 }
