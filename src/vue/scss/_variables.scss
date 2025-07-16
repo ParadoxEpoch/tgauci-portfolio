@@ -8,6 +8,12 @@ $card-background: #1e1e1f;
     }
 }
 
+@mixin desktop-sm {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+
 @mixin desktop {
 	@media screen and (min-width: 912px) {
 		@content;

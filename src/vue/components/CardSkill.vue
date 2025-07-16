@@ -71,6 +71,10 @@ export default {
 .skill-item {
 	min-width: 100%;
 	scroll-snap-align: center;
+
+	@include desktop {
+		min-width: calc(50% - 15px);
+	}
 }
 
 .skill-image-box {
@@ -83,9 +87,19 @@ export default {
 	box-shadow: -4px 8px 24px #00000040;
 	display: flex;
 
+	@include desktop-sm {
+		transform: translate(30px, -30px);
+		border-radius: 20px;
+	}
+
 	img {
 		padding: 20%;
 		object-fit: contain;
+
+		@include desktop-sm {
+			width: 80px;
+			height: 80px;
+		}
 	}
 }
 
@@ -95,6 +109,11 @@ export default {
 	text-transform: capitalize;
 	font-size: 1.125rem;
 	font-weight: bold;
+
+	@include desktop-sm {
+		margin-bottom: 10px;
+		margin-left: 95px;
+	}
 }
 
 .skill-text {
@@ -118,6 +137,12 @@ export default {
 	box-shadow: 0 16px 30px #00000020;
 	cursor: pointer;
 	z-index: 1;
+	height: 100%;
+
+	@include desktop-sm {
+		padding: 30px;
+		padding-top: 25px;
+	}
 
 	&::before {
 		content: "";
@@ -145,40 +170,6 @@ export default {
 	> div:last-of-type {
 		display: flex;
     	font-size: 1.5rem;
-	}
-}
-
-@media (min-width: 580px) {
-	.content-card {
-		padding: 30px;
-		padding-top: 25px;
-	}
-
-	.skill-image-box {
-		transform: translate(30px, -30px);
-		border-radius: 20px;
-
-		img {
-			width: 80px;
-			height: 80px;
-			//filter: drop-shadow(2px 4px 6px #000000B0);
-		}
-	}
-
-	.skill-item-title {
-		margin-bottom: 10px;
-		margin-left: 95px;
-	}
-
-	.skill-text {
-		line-clamp: 2;
-		-webkit-line-clamp: 2;
-	}
-}
-
-@media (min-width: 1024px) {
-	.skill-item {
-		min-width: calc(50% - 15px);
 	}
 }
 </style>

@@ -55,6 +55,10 @@ export default {
 	&::-webkit-scrollbar-track {
 		background: #2b2b2c;
 		border-radius: 5px;
+
+		@include mobile {
+			margin-right: 50px;
+		}
 	}
 
 	&::-webkit-scrollbar-thumb {
@@ -64,16 +68,12 @@ export default {
 
 	&::-webkit-scrollbar-button {
 		width: 20px;
+
+		@include desktop {
+			width: 100px;
+		}
 	}
 }
-
-/* .skill {
-	margin-bottom: 30px;
-}
-
-.skill-title {
-	margin-bottom: 20px;
-} */
 
 .skill-list {
 	display: flex;
@@ -88,28 +88,13 @@ export default {
 	scroll-behavior: smooth;
 	overscroll-behavior-inline: contain;
 	scroll-snap-type: inline mandatory;
-}
 
-@media (min-width: 580px) {
-	/* .skill-title {
-		margin-bottom: 25px;
-	} */
-
-	.skill-list {
+	@include desktop {
 		gap: 30px;
-		//margin: 0 -30px;
 		margin-left: -30px;
 		margin-right: -30px;
 		padding: 30px;
 		padding-bottom: 35px;
-	}
-}
-
-@media (min-width: 768px) {
-	.has-scrollbar {
-		&::-webkit-scrollbar-button {
-			width: 100px;
-		}
 	}
 }
 </style>
