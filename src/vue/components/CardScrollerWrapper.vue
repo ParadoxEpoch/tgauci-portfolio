@@ -30,6 +30,7 @@ export default {
 			const newPosition = Math.min(maxScroll, scroller.scrollLeft + scrollAmount);
 			scroller.scrollTo({ left: newPosition, behavior: 'smooth' });
 		},
+	}
 }
 </script>
 
@@ -84,7 +85,7 @@ export default {
 .skill-list {
 	display: flex;
 	justify-content: flex-start;
-	align-items: flex-start;
+	align-items: stretch;
 	gap: 15px;
 	margin: 0 -15px;
 	padding: 25px 15px;
